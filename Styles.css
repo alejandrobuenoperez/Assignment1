@@ -82,31 +82,40 @@ header{
     position: relative;
 }
 .small1{
-    background-color: rgb(70, 184, 255);
-    overflow: scroll;
-    color: white;
     grid-row: 2;
+    background-color: rgb(57, 113, 158);
+    color: rgb(255,255,255);
+    font-size: 1.2em;
+    padding: 0.5em;
 }
 .small2{
-    background-color: brown;
     grid-row: 2;
     background-image: url("Images/img3.png");
 }
 .small3{
-    grid-row:3;
-    background-color: brown;
+    grid-row: 2;
+    background-image: url("Images/img4.png");
 }
 .small4{
-    grid-row:3;
-    background-color: brown;
+    grid-row: 2;
+    font-size: 1.2em;
 }
-.medium1{
-    background-color: white;
-    grid-column-start:3;
-    grid-column-end: 5;
+.small4{
     grid-row:2;
-    background-image: url("Images/img4.png");
+    background-color: rgb(255,255,255);
+    color: rgb(0, 0, 0);
+}
+.small5{
+    grid-row:3;
+}
+.small6{
+    grid-row:3;
+    background-image: url("Images/imgtw.png");
+    position: relative;
+    background-size:100%;
     background-repeat: no-repeat;
+    width:100%;
+    height:100%;
 }
 .medium2{
     background-color: aqua;
@@ -124,19 +133,28 @@ header{
     margin-left: 3em;
     margin-bottom: 3em;
 }
-.container .fLine{
-    background-color: rgba(0,0,255,0.5);
+.fLine{
+    background-color: rgba(57, 113, 158, 0.7);
     font-size: 17px;
     margin:0;
     width: 6em;
     padding: 0.5em;
     font-weight: bold;
 }
-.container .sLine{
+.sLine,
+.sLine2{
     background-color: rgba(255,255,255,0.7);
     font-size: 17px;
     color: black;
     font-weight: bold;
     padding: 0.5em;
-    margin:0;
+    margin: 0;
+    bottom: 0;
+}
+.video{
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
