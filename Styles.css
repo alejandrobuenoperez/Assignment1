@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web&display=swap');
+html{
+    font-family: 'Titillium Web';
+    font-size: 55%;
+    color: white;
+}
+body{
+    padding: 2% 10%;
+    background-color: black;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+}
+.Logo{
+    width: 250px;
+    height: 130px;
+    margin-right: 2.1em;
+}
+.imgLogo{
+    width: 100%;
+    height: 100%;
+}
+.Row1{
+    display: inline-flex;
+    margin-bottom: 1.5em;
+    gap: 12px;
+    float: right;
+}
+.Row1 h2{
+    font-size: 20px;
+}
+.Row1 >h2:not(.last){
+    border-right: 0.5px solid;
+    border-color: white;
+    padding-right:  0.5em;
+}
+.searchBar{
+    display: flex;
+    align-items: center;
+}
+.searchBar>input{
+    background-color: rgb(51,51,51);
+    border: 0px;
+    color:white;
+    height: 70%;
+}
+.Row2{
+    display: inline-flex;
+    gap: 12px;
+    background-color: grey;
+    padding: 0em 1.25em; 
+}
+.Row2 > h2:not(.last){
+    border-right: 0.5px solid;
+    border-color: white;
+    padding-right: 0.5em;
+}
+.Grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px
+}
+.Grid > div{
+    height: 250px;
+}
+.largeImage{
+    background-color: blue;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 1;
+    background-image: url("Images/img1.png");
+}
+.small1{
+    background-color: brown;
+    grid-row: 2;
+}
+.small2{
+    background-color: brown;
+    grid-row: 2;
+    background-image: url("Images/img3.png");
+}
+.small3{
+    grid-row:3;
+    background-color: brown;
+}
+.small4{
+    grid-row:3;
+    background-color: brown;
+}
+.medium1{
+    background-color: white;
+    grid-column-start:3;
+    grid-column-end: 5;
+    grid-row:2;
+    background-image: url("Images/img4.png");
+    background-repeat: no-repeat;
+}
+.medium2{
+    background-color: aqua;
+    grid-row:3;
+    grid-column-start:2;
+    grid-column-end: 4;
+    background-image: url("Images/img5.png");
+}
