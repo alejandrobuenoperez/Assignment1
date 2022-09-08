@@ -88,6 +88,14 @@ header{
     font-size: 1.2em;
     padding: 0.5em;
 }
+.line{
+    height: 1px;
+    border-width: 0;
+    background-color: rgb(255,255,255);
+}
+.bottom{
+    bottom: 0;
+}
 .small2{
     grid-row: 2;
     background-image: url("Images/img3.png");
@@ -97,13 +105,27 @@ header{
     background-image: url("Images/img4.png");
 }
 .small4{
-    grid-row: 2;
     font-size: 1.2em;
-}
-.small4{
     grid-row:2;
     background-color: rgb(255,255,255);
     color: rgb(0, 0, 0);
+}
+.blueTitle{
+    font-size: 20px;
+    color: rgb(57, 113, 158);
+    margin: 0.5em;
+}
+.blueText{
+    font-size: 1em;
+    color: rgb(57, 113, 158);
+    font-weight: bold;
+    margin: 1em;
+}
+.blackText{
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin: 1em;
 }
 .small5{
     grid-row:3;
@@ -118,7 +140,6 @@ header{
     height:100%;
 }
 .medium2{
-    background-color: aqua;
     grid-row:3;
     grid-column-start:2;
     grid-column-end: 4;
@@ -141,13 +162,21 @@ header{
     padding: 0.5em;
     font-weight: bold;
 }
-.sLine,
-.sLine2{
+.sLine{
     background-color: rgba(255,255,255,0.7);
     font-size: 17px;
     color: black;
     font-weight: bold;
     padding: 0.5em;
+    margin: 0;
+    bottom: 0;
+}
+.sLine2{
+    background-color: rgba(255,255,255,0.7);
+    font-size: 17px;
+    color: black;
+    font-weight: bold;
+    position: relative;
     margin: 0;
     bottom: 0;
 }
