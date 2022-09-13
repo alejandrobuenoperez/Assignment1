@@ -75,11 +75,21 @@ header{
     height: 250px;
 }
 .largeImage{
+    position: absolute;
+    background-image: url("Images/img1.png");
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    display: none;
+}
+.carousell{
+    grid-row: 1;
+    position: relative;
     grid-column-start: 1;
     grid-column-end: 5;
-    grid-row: 1;
-    background-image: url("Images/img1.png");
-    position: relative;
+    width: 100%;
+    height: 100%;
 }
 .small1{
     grid-row: 2;
@@ -199,6 +209,28 @@ header{
     position: absolute;
     left:0;
     bottom:0;
+    transition: top ease 1.5s;
+}
+.whitePartContainer2{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255,255,255,0.7);
+    height: 100%;
+}
+.container2:hover{
+    top:0;
+}
+.sLine2Paragraph{
+    display: none;
+    margin:0;
+}
+.container2:hover .sLine2Paragraph{
+    display: block;
+    font-size: 14px;
+    color:black;
+    background:rgba(255, 255, 255, 0.7);
+    margin:0;
+    height: 100%;
 }
 .fLine2{
     background-color: rgba(57, 113, 158, 0.7);
@@ -213,7 +245,6 @@ header{
     color: black;
     font-weight: bold;
     margin: 0;
-    bottom: 0;
 }
 #videoLeftDownCorner{
     left: 0;
@@ -261,3 +292,28 @@ header{
 .buttonPlay:hover{
     opacity: 0.6;
 }
+.prevNext{
+    display: flex;
+    width:100%;
+    position: absolute;
+    z-index: 1;
+    align-items: center;
+    height: 100%;
+}
+.prev{
+    cursor:pointer;
+    font-size:25px;
+    padding: 10px;
+    margin-right: auto;
+    margin-left: 0;
+}
+.next{
+    cursor:pointer;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 25px;
+    padding: 10px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }

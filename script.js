@@ -11,17 +11,20 @@ function play() {
 
 let slideIndex = 0;
 showSlide(slideIndex);
-let slides = document.getElementsByClassName("container");
 function showSlide(n){
+    let slides = document.getElementsByClassName("largeImage");
     slides[n].style.display = 'block';
 }
 function swipeLeft(){
- changeSlide(n-1);
+    slideIndex -=1;
+    changeSlide(slideIndex);
 }
 function swipeRight(){
-    changeSlide(n+1);
+    slideIndex +=1;
+    changeSlide(slideIndex);
 }
 function changeSlide(n){
+    let slides = document.getElementsByClassName("largeImage");
     if(n>slides.length-1){
         slideIndex = 0;
     }
@@ -32,8 +35,8 @@ function changeSlide(n){
         if(i===slideIndex){
             slides[slideIndex].style.display = 'block';
         }else{
-            slides[slideIndex].style.display = 'none';
+            slides[i].style.display = 'none';
         }
     }
-    setTimeout(changeSlide,30000);
+    setTimeout(swipeRight,30000);
 }
