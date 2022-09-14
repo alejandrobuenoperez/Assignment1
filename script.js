@@ -38,5 +38,5 @@ function changeSlide(n){
             slides[i].style.display = 'none';
         }
     }
-    setTimeout(swipeRight,30000);
 }
+setTimeout(swipeRight,30000);

@@ -138,6 +138,7 @@ header{
     color: rgb(0, 0, 0);
 }
 .medium1{
+    position: relative;
     display: flex;
     grid-row: 2;
     grid-column-start: 3;
@@ -152,7 +153,7 @@ header{
     font-size: 1em;
     color: rgb(57, 113, 158);
     font-weight: bold;
-    margin: 1em;
+    margin: 0.5em;
 }
 .blackText{
     font-size: 1em;
@@ -163,7 +164,7 @@ header{
 .small5{
     grid-row:3;
     overflow: hidden;
-    background-color: gray;
+    background-color: rgb(95, 17, 0);
     position: relative;
 }
 .small6{
@@ -176,6 +177,23 @@ header{
     grid-column-start:2;
     grid-column-end: 4;
     background-image: url("Images/img5.png");
+}
+.divTriangle{
+    justify-content: flex-end;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+.triangle{
+    background: transparent;
+    width:0px;
+    height:0px;
+    border-bottom: 50px solid transparent;
+    border-top: 50px solid transparent;
+    border-right: 50px solid white;
 }
 .container{
     display: flex;
