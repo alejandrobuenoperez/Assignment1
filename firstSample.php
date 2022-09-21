@@ -1,6 +1,20 @@
+<?php
+    $jsonContent = file_get_contents("NewsText/Ass2News.json");
+    $array = json_decode($jsonContent, true);
+?>
 <!DOCTYPE html>
 <html>
     <head>
+        <style type="text/css">
+            .small2{
+                background-image: url('<?php echo $array["news"][1]["imgurl"];?>');
+                background-size: 350px 280px;
+            }
+            .small3{
+                background-image: url('<?php echo $array["news"][2]["imgurl"];?>');
+                background-size: 350px 280px;
+            }
+        </style>
         <title>Assigment 1</title>
         <link rel="stylesheet" href="Styles.css" type="text/css">
     </head>
@@ -66,26 +80,34 @@
             </div>
             <div class="small1">
                 <div class="small1Up">
-                    <P>NASA Events</P>
+                    <?php 
+                        $titleSmall1 = $array["news"][0]["title"];
+                        echo "<p>{$titleSmall1}</p>";
+                    ?>
                     <hr class="line">
-                    <p>Wednesday, Sept. 7: OSIRIS-REx Science and Engineering Talk (12 p.m. EDT), Asteroid Panel Discussion (1 p.m. EDT), NASA TV</p>
-                    <p>Thursday, Sept. 8: Launch of OSIRIS-REx, 7:05 p.m. EDT</p>
-                    <p>Registration Open: NASA Social, GOES-R Weather Satellite Launch, Nov. 3-4 at Cape Canaveral</p>
+                    <?php
+                        $contentSmall1 = $array["news"][0]["content"];
+                        echo "<p>{$contentSmall1}</p>";
+                    ?>
                 </div>
-                <div class="small1Down">
+                <!--<div class="small1Down">
                     <hr class="line">
                     <div class="small1DownText">
                         <p>Calendar</p>
                         <p>Launches and landings</p>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div class="small2">
                 <div class="container2">
                     <p class="fLine2">Expedition 48</p>
                     <div class="whitePartContainer2">
-                    <p class="sLine2">NASA's Record-breaking Astronaut, Crewmates Safely Return to Earth</p>
-                    <p class="sLine2Paragraph">Random text to talk about some important news related to Nasa's proyects. Random text to talk about some important news related to Nasa's proyects. Random text to talk about some important news related to Nasa's proyects.</p>
+                    <?php
+                        $titleSmall2 = $array["news"][1]["title"];
+                        $hiddenParagraph = $array["news"][1]["content"];
+                        echo "<p class=\"sLine2\">{$titleSmall2}</p>";
+                        echo "<p class=\"sLine2Paragraph\">{$hiddenParagraph}</p>";
+                    ?>
                     </div>
                 </div>
             </div>
@@ -97,8 +119,12 @@
                     </div>
                 </div>
                 <div class="small4">
-                    <p class="blueTitle">NASA to Launch First U.S. Asteroid Sample Return Mission</p>
-                    <p class="blackText">Launching on Sept. 8, 2016, OSIRIS-REx will travel to a near-Earth asteroid called Bennu and bring a small sample back to Earth for study.</p>
+                    <?php
+                        $titleSmall4 = $array["news"][2]["title"];
+                        $blackText = $array["news"][2]["content"];
+                        echo "<p class=\"blueTitle\">{$titleSmall4}</p>";
+                        echo "<p class=\"blackText\">{$blackText}</p>";
+                    ?>
                     <p class="blueText">Mission Site</p>
                     <p class="blueText">Briefings Schedule</p>
                     <P class="blueText">Launch Updates</P>

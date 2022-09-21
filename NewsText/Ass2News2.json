@@ -1,0 +1,19 @@
+{
+    "news":[
+        {
+            "title":"NASA's Mars lander hears the 'bloop' of meteorites hitting the Red Planet",
+            "imgurl":"",
+            "content":"The Mars InSight lander has detected seismic and acoustic waves created when four space rocks impacted the surface of the Red Planet. InSight's seismometer felt the vibrations from the impacts in 2020 and 2021, marking the first detections of meteoroids hitting the planet since the lander began gathering data after touching down in 2018. The meteoroid impacts occurred between 53 miles (85 kilometers) and 180 miles (290 km) from InSight's location in the Elysium Planitia region of Mars, a broad plain that stretches across the Martian equator."
+        },
+        {
+            "title":"China Mars mission data offers evidence for ancient ocean",
+            "imgurl":"",
+            "content":"The China National Space Administration (CNSA) has revealed new data from its Tianwen 1 Mars orbiter and Zhurong Mars rover, according to a report from state-run media network CGTN. "
+        },
+        {
+            "title":"NASA's DART asteroid-impact mission will be a key test of planetary defense",
+            "imgurl":"",
+            "content":"When NASA's Double Asteroid Redirection Test (DART) slams into the tiny asteroid Dimorphos, it will be our first attempt to demonstrate our ability to deflect dangerous incoming asteroids."
+        }
+    ]
+}
