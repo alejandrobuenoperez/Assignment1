@@ -1,7 +1,15 @@
 <?php
-    $jsonContent = file_get_contents("NewsText/Ass2News.json");
+    session_start();
+    $fileName = "";
+    $jsonContent="";
+    if(isset($_SESSION["fileName"])){
+        $fileName = $_SESSION["fileName"];
+    }else{
+        $fileName="Ass2News.json";
+    }
+    $jsonContent = file_get_contents("NewsText/{$fileName}");
     $array = json_decode($jsonContent, true);
-?>
+    ?>
 <!DOCTYPE html>
 <html>
     <head>
