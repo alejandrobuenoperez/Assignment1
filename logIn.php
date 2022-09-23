@@ -23,7 +23,7 @@
 <html>
     <head>
         <title>
-            Adming LogIn
+            Admin LogIn
         </title>
         <link rel="stylesheet" href="StylesLogin.css"type="text/css">
     </head>

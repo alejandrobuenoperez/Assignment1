@@ -13,14 +13,19 @@
 <html>
     <head>
         <title>Admin Page</title>
+        <link rel="stylesheet" href="StylesLogin.css"type="text/css">
     </head>
     <body>
-        <form method='POST'>
-            <label>Select a file: </label>
-            <input type='file' id="fileInput" accept='.json' name="file"><br>
-            <input type='submit' id="btn-submit" value='Apply Changes'>
-        </form>
-        <a href="signOut.php">Sign out</a>
+        <div class="container">
+            <div class="divCentral">
+                <form method='POST'>
+                    <label>Select a file: </label>
+                    <input type='file' id="fileInput" accept='.json' name="file"><br>
+                    <input type='submit' id="btn-submit" value='Apply Changes'>
+                </form>
+                <a href="signOut.php">Sign out</a>
+            </div>
+        </div>
     </body>
     <script>
         var btnSubmit = document.getElementById('btn-submit');
