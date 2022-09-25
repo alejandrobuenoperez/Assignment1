@@ -25,6 +25,7 @@
         </style>
         <title>Assigment 1</title>
         <link rel="stylesheet" href="Styles.css" type="text/css">
+        <link rel="stylesheet" href="StylesLogin.css"type="text/css">
     </head>
     <body>
         <header>
@@ -45,6 +46,12 @@
                         <img src="Images/lupa.png" class="searchIcon">
                     </div>
                     <img src="Images/share.png" class="shareIcon">
+                    <div>
+                        <img class="imageButton" src="Images/admin.png" onclick="myFunction()">
+                        <script>
+                            function myFunction() { location.replace("/adminPage.php"); }
+                        </script>
+                     </div>
                 </div>
                 <div class="Row2">
                     <h2>International Space Station</h2>

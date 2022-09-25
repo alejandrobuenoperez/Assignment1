@@ -60,6 +60,7 @@
                     <input type="password" id = "password"name ="password"><br/>
                     <input type="submit" id="buttonSubmit" value="LogIn">
                 </form>
+                <a href="signOut.php">Back to website</a>
                 <?php
                     if(!empty($loginError)){
                         echo "<div class=\"errorTextDiv\">
