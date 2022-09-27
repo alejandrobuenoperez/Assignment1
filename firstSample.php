@@ -25,7 +25,6 @@
         </style>
         <title>Assigment 1</title>
         <link rel="stylesheet" href="Styles.css" type="text/css">
-        <link rel="stylesheet" href="StylesLogin.css"type="text/css">
     </head>
     <body>
         <header>
