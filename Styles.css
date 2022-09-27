@@ -41,20 +41,56 @@ header{
     height: 25px;
     width: 25px;
 }
-.searchBar{
+.item1{
     display: flex;
     background-color: rgb(51,51,51);
     padding: 0.8em;
 }
-.searchBar img{
+.item2 img{
     height: 25px;
     width: 25px;
 }
-.searchBar>input{
+.item1>input{
     background-color: rgb(51,51,51);
     border: 0px;
     color:white;
 }
+.item1{
+    grid-area: searchBar;
+}
+.item2{ 
+    grid-area: lupa; 
+    padding: 10px; 
+}
+.item3{ 
+    grid-area: list;
+    background-color: rgb(84, 84, 84, 0.9);
+    overflow: visible;
+    z-index: 1;
+    text-align: left;
+}
+ul{
+    list-style-type: none;
+    padding: 3%;
+    margin: 0;
+}
+li{
+    padding: 2% 5%;
+}
+li:hover{
+    background-color: rgb(50, 50, 50);
+}
+.searchBar-grid {
+    display: grid;
+    grid-template-areas:
+      'searchBar lupa'
+      'list list';
+    height: 35px;
+    padding: 0.5rem;
+  }
+.searchBar-grid  > div {
+    font-size: 1.5rem;
+  }
 .imageButton{
     background: url(/Images/admin.png);
     height: 5rem;
@@ -95,6 +131,7 @@ header{
     grid-column-end: 5;
     width: 100%;
     height: 100%;
+    z-index: 0;
 }
 .small1{
     grid-row: 2;

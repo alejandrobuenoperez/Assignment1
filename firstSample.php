@@ -54,9 +54,22 @@
                     <h2>Downloads</h2>
                     <h2>About</h2>
                     <h2 class="last">NASA Audiences</h2>
-                    <div class="searchBar">
-                        <input type="text" placeholder="Search" id="SearchInput" onkeyup="showHint(this.value)" name="SearchInput">
-                        <img src="Images/lupa.png" class="searchIcon">
+                    <div class="searchBar-grid">
+                        <div class="item1">
+                            <input type="text" placeholder="Search" id="SearchInput" onkeyup="showHint(this.value)" name="SearchInput">
+                        </div>
+                        <div class="item2">   
+                            <img src="Images/lupa.png" class="searchIcon">
+                        </div>
+                        <div class="item3">
+                            <ul>
+                                <li>Coffee</li>
+                                <li>Tea</li>
+                                <li>Milk</li>
+                                <li>Water</li>
+                                <li>CocaCola</li>
+                            </ul>
+                        </div>
                     </div>
                     <p id="txtHint"></p>
                     <img src="Images/share.png" class="shareIcon">
