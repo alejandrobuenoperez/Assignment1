@@ -2,24 +2,35 @@
     session_start();
     $fileName = "";
     $jsonContent="";
-    if(isset($_SESSION["fileName"])){
-        $fileName = $_SESSION["fileName"];
-    }else{
-        $fileName="Ass2News.json";
+    require_once "dbConnect.php";
+    $sql = "SELECT * FROM News Order by NewId Desc;";
+    $result = mysqli_query($connection, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)){
+            $data[] = $row;
+        }  
     }
-    $jsonContent = file_get_contents("NewsText/{$fileName}");
-    $array = json_decode($jsonContent, true);
+    /*{
+        if(isset($_SESSION["fileName"])){
+            $fileName = $_SESSION["fileName"];
+        }else{
+            $fileName="Ass2News.json";
+        }
+        $jsonContent = file_get_contents("NewsText/{$fileName}");
+        $data = json_decode($jsonContent, true);
+    }
+    */
     ?>
 <!DOCTYPE html>
 <html>
     <head>
         <style type="text/css">
             .small2{
-                background-image: url('<?php echo $array["news"][1]["imgurl"];?>');
+                background-image: url('<?php echo $data[1]["Image"];?>');
                 background-size: 350px 280px;
             }
             .small3{
-                background-image: url('<?php echo $array["news"][2]["imgurl"];?>');
+                background-image: url('<?php echo $data[2]["Image"];?>');
                 background-size: 350px 280px;
             }
         </style>
@@ -41,7 +52,7 @@
                     <h2>About</h2>
                     <h2 class="last">NASA Audiences</h2>
                     <div class="searchBar">
-                        <input type="text" placeholder="Search" id="SearchInput" name="SearchInput">
+                        <input type="text" placeholder="Search" id="SearchInput" onkeyup="showHint(this.value) name="SearchInput">
                         <img src="Images/lupa.png" class="searchIcon">
                     </div>
                     <img src="Images/share.png" class="shareIcon">
@@ -95,12 +106,12 @@
             <div class="small1">
                 <div class="small1Up">
                     <?php 
-                        $titleSmall1 = $array["news"][0]["title"];
+                        $titleSmall1 = $data[0]["Title"];
                         echo "<p>{$titleSmall1}</p>";
                     ?>
                     <hr class="line">
                     <?php
-                        $contentSmall1 = $array["news"][0]["content"];
+                        $contentSmall1 = $data[0]["Content"];
                         echo "<p>{$contentSmall1}</p>";
                     ?>
                 </div>
@@ -117,8 +128,8 @@
                     <p class="fLine2">Expedition 48</p>
                     <div class="whitePartContainer2">
                     <?php
-                        $titleSmall2 = $array["news"][1]["title"];
-                        $hiddenParagraph = $array["news"][1]["content"];
+                        $titleSmall2 = $data[1]["Title"];
+                        $hiddenParagraph = $data[1]["Content"];
                         echo "<p class=\"sLine2\">{$titleSmall2}</p>";
                         echo "<p class=\"sLine2Paragraph\">{$hiddenParagraph}</p>";
                     ?>
@@ -134,8 +145,8 @@
                 </div>
                 <div class="small4">
                     <?php
-                        $titleSmall4 = $array["news"][2]["title"];
-                        $blackText = $array["news"][2]["content"];
+                        $titleSmall4 = $data[2]["Title"];
+                        $blackText = $data[2]["Content"];
                         echo "<p class=\"blueTitle\">{$titleSmall4}</p>";
                         echo "<p class=\"blackText\">{$blackText}</p>";
                     ?>
