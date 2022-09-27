@@ -10,6 +10,9 @@
             $data[] = $row;
         }  
     }
+    if(!isset($_SESSION['data'])) {
+        $_SESSION['data'] = $data;
+    }
     /*{
         if(isset($_SESSION["fileName"])){
             $fileName = $_SESSION["fileName"];
@@ -52,9 +55,10 @@
                     <h2>About</h2>
                     <h2 class="last">NASA Audiences</h2>
                     <div class="searchBar">
-                        <input type="text" placeholder="Search" id="SearchInput" onkeyup="showHint(this.value) name="SearchInput">
+                        <input type="text" placeholder="Search" id="SearchInput" onkeyup="showHint(this.value)" name="SearchInput">
                         <img src="Images/lupa.png" class="searchIcon">
                     </div>
+                    <p id="txtHint"></p>
                     <img src="Images/share.png" class="shareIcon">
                     <div>
                         <img class="imageButton" src="Images/admin.png" onclick="myFunction()">
