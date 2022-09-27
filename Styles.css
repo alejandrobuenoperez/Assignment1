@@ -63,6 +63,7 @@ header{
     padding: 10px; 
 }
 .item3{ 
+    display: none;
     grid-area: list;
     background-color: rgb(84, 84, 84, 0.9);
     overflow: visible;

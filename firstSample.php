@@ -61,13 +61,8 @@
                         <div class="item2">   
                             <img src="Images/lupa.png" class="searchIcon">
                         </div>
-                        <div class="item3">
-                            <ul>
-                                <li>Coffee</li>
-                                <li>Tea</li>
-                                <li>Milk</li>
-                                <li>Water</li>
-                                <li>CocaCola</li>
+                        <div class="item3" id="listDiv">
+                            <ul id = "list">
                             </ul>
                         </div>
                     </div>
