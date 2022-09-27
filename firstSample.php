@@ -78,14 +78,14 @@
                         <p class="fLine">Artemis I</p>
                         <p class="sLine">Artemis I Travel Essentials: The Ultimate Personal Tour Guide for Your Trip to the Moon</p>
                     </div>
-                    <img src="Images/img11.png" class="image2">
+                    <img src="Images/lunar-orbit.png" class="image2">
                 </div>
                 <div class="largeImage">
                     <div class="container">
                         <p class="fLine">BackToSchool</p>
                         <p class="sLine">The Artemis Generation Returns to School as NASA Returns to the Moon</p>
                     </div>
-                    <img src="Images/img12.png" class="image3">
+                    <img src="Images/back-to-school.png" class="image3">
                 </div>
                 <div class="prevNext">
                     <a class="prev" onclick="swipeLeft()">&#10094;</a>
