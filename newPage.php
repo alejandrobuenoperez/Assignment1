@@ -1,3 +1,9 @@
+<?php
+    $json = file_get_contents('php://input');
+    echo "json" .$json;
+    $data = json_decode($json, true);
+    echo 'a' .$data;
+?>
 <!DOCTYPE html>
 <head>
     <title>New Page</title>
@@ -5,9 +11,11 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="title">Titulo de la noticia</h2>
-        <img class="image" src="Images/asteroid-impact.png">
-        <p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <?php
+               echo "<h2 class=\"title\">{$data["Title"]}</h2>
+               <img class=\"image\" src=\"{$data["Image"]}\">
+               <p class=\"content\">{$data["Content"]}</p>"
+        ?>
     </div>
 </body>
 </html>
