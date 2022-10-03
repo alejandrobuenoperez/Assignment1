@@ -25,5 +25,26 @@
             "imgurl":"Images/artemis-1-moon-mission.png",
             "content":"Artemis 1 is now currently scheduled to launch no earlier than mid-October from Launch Complex 39B at NASA's Kennedy Space Center in Florida."
         }
+        ,{
+            "title": "Expedition 48 crew lands safely on Earth",
+            "imgurl": "Images/expedition-48.png",
+            "content": "The Soyuz TMA-20M spacecraft is seen as it lands with Expedition 48 crew members NASA astronaut Jeff Williams, Russian cosmonauts Alexey Ovchinin, and Oleg Skripochka of Roscosmos near the town of Zhezkazgan, Kazakhstan on Wednesday, Sept. 7, 2016 (Kazakh time)."
+
+        },
+        {
+            "title":"Artemis I travel Essentials: The ultimate Personal Tour Guide for your trip to the Moon",
+            "imgurl": "Images/lunar-orbit.png",
+            "content": "Artemis I is an uncrewed flight test that will lay the foundation for a sustained long-term presence on and around the Moon. Launching this summer, the Space Launch System (SLS) rocket and integrated Orion spacecraft will help us get a feel for what astronauts will experience on future flights."
+        },
+        {
+            "title": "Artemis Generation Returns to school as Nasa Returns to the Moon",
+            "imgurl": "Images/back-to-school.png",
+            "content": "Adventure awaits as students return to the classroom for the 2022-2023 school year and NASA returns to the Moon with Artemis."
+        },
+        {
+            "title": "Water worlds are likely common",
+            "imgurl": "Images/ocean-worlds.png",
+            "content": "When it comes to searching for evidence of alien life, the phrase follow the water is often quoted as a guiding principle. All life on Earth depends on water, so it makes sense to focus on other places where water exists as well."
+        }
     ]
 }

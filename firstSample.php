@@ -3,7 +3,7 @@
     $fileName = "";
     $jsonContent="";
     require_once "dbConnect.php";
-    $sql = "SELECT * FROM News Order by NewId Desc;";
+    $sql = "SELECT NewId, Title, Image, Content FROM News Order by NewId Desc LIMIT 7;";
     $result = mysqli_query($connection, $sql);
     if (mysqli_num_rows($result) > 0) {
         while($row = mysqli_fetch_assoc($result)){
@@ -28,13 +28,21 @@
 <html>
     <head>
         <style type="text/css">
+            .largeImage{
+                background-image: url("<?php echo $data[0]["Image"];?>");
+                background-size: 1200px 280px;
+            }
             .small2{
-                background-image: url('<?php echo $data[1]["Image"];?>');
+                background-image: url('<?php echo $data[4]["Image"];?>');
                 background-size: 350px 280px;
             }
             .small3{
-                background-image: url('<?php echo $data[2]["Image"];?>');
+                background-image: url('<?php echo $data[5]["Image"];?>');
                 background-size: 350px 280px;
+            }
+            .medium2{
+                background-image: url('<?php echo $data[6]["Image"];?>');
+                background-size: 700px 280px;
             }
         </style>
         <title>Assigment 1</title>
@@ -92,23 +100,38 @@
             <div class="carousell">
                 <div class="largeImage">
                     <div class="container">
-                        <p class="fLine">Space station</p>
-                        <p class="sLine">Expedition 48 crew lands safely on Earth</p>
+                        <!--<p class="fLine">Space station</p>-->
+                        <?php
+                            $titleLarge1 = $data[0]["Title"];
+                            echo "<p class=\"sLine\">{$titleLarge1}</p>"
+                        ?>
                     </div>
                 </div>
                 <div class="largeImage">
                     <div class="container">
-                        <p class="fLine">Artemis I</p>
-                        <p class="sLine">Artemis I Travel Essentials: The Ultimate Personal Tour Guide for Your Trip to the Moon</p>
+                        <!--p class="fLine">Artemis I</p>-->
+                        <?php
+                            $titleLarge2 = $data[1]["Title"];
+                            echo "<p class=\"sLine\">{$titleLarge2}</p>"
+                        ?>
                     </div>
-                    <img src="Images/lunar-orbit.png" class="image2">
+                   <?php
+                    $imageLarge2 = $data[1]["Image"];
+                    echo "<img src=\"$imageLarge2\" class=\"image2\">";
+                   ?> 
                 </div>
                 <div class="largeImage">
                     <div class="container">
-                        <p class="fLine">BackToSchool</p>
-                        <p class="sLine">The Artemis Generation Returns to School as NASA Returns to the Moon</p>
-                    </div>
-                    <img src="Images/back-to-school.png" class="image3">
+                        <!--<p class="fLine">BackToSchool</p>-->
+                        <?php
+                            $titleLarge3 = $data[2]["Title"];
+                            echo "<p class=\"sLine\">{$titleLarge3}</p>"
+                        ?>
+                     </div>
+                    <?php
+                    $imageLarge3 = $data[2]["Image"];
+                    echo "<img src=\"$imageLarge3\" class=\"image3\">";
+                   ?> 
                 </div>
                 <div class="prevNext">
                     <a class="prev" onclick="swipeLeft()">&#10094;</a>
@@ -118,12 +141,12 @@
             <div class="small1">
                 <div class="small1Up">
                     <?php 
-                        $titleSmall1 = $data[0]["Title"];
+                        $titleSmall1 = $data[3]["Title"];
                         echo "<p>{$titleSmall1}</p>";
                     ?>
                     <hr class="line">
                     <?php
-                        $contentSmall1 = $data[0]["Content"];
+                        $contentSmall1 = $data[3]["Content"];
                         echo "<p>{$contentSmall1}</p>";
                     ?>
                 </div>
@@ -140,8 +163,8 @@
                     <p class="fLine2">Expedition 48</p>
                     <div class="whitePartContainer2">
                     <?php
-                        $titleSmall2 = $data[1]["Title"];
-                        $hiddenParagraph = $data[1]["Content"];
+                        $titleSmall2 = $data[4]["Title"];
+                        $hiddenParagraph = $data[4]["Content"];
                         echo "<p class=\"sLine2\">{$titleSmall2}</p>";
                         echo "<p class=\"sLine2Paragraph\">{$hiddenParagraph}</p>";
                     ?>
@@ -157,8 +180,8 @@
                 </div>
                 <div class="small4">
                     <?php
-                        $titleSmall4 = $data[2]["Title"];
-                        $blackText = $data[2]["Content"];
+                        $titleSmall4 = $data[5]["Title"];
+                        $blackText = $data[5]["Content"];
                         echo "<p class=\"blueTitle\">{$titleSmall4}</p>";
                         echo "<p class=\"blackText\">{$blackText}</p>";
                     ?>
@@ -179,7 +202,8 @@
                     <button class="buttonPlay" onclick="play()"></button>
                 </div>
             </div>
-            <div class="medium2"></div>
+            <div class="medium2">
+            </div>
             <div class="small6"><a class="twitter-timeline" data-width="100%" data-height="250" data-theme="dark" href="https://twitter.com/NASA?ref_src=twsrc%5Etfw">Tweets by NASA</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
         </div>
     </body>

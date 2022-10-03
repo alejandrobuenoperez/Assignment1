@@ -24,6 +24,7 @@
         }
         mysqli_stmt_close($statement);
         mysqli_close($connection);
+        header('location: firstSample.php');
     }
 ?>
 <!DOCTYPE html>

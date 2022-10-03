@@ -16,15 +16,12 @@ body{
 h2{
     width: 70%;
     color: white;
-    border: 1px solid red;
 }
 .image{
     width: 70%;
     margin: 2%;
-    border: 1px solid red;
 }
 .content{
     width: 70%;
     color: white;
-    border: 1px solid red;
 }

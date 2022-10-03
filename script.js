@@ -59,7 +59,7 @@ function showHint(str) {
                           let li = document.createElement("li");
                           li.innerHTML = element.Title;
                           li.addEventListener("click",function(){
-                            onClickLi(li.innerHTML);
+                            onClickLi(element.NewId);
                           });
                           list.appendChild(li);
                         });
@@ -75,15 +75,9 @@ function showHint(str) {
         xmlhttp.open("GET", "gethint.php?q=" + str, true);
         xmlhttp.send();
 }
-function onClickLi(title)
+function onClickLi(newId)
 {
-    let jsonTosend = result.filter( item => item.Title === title);
-    var jsonsend = JSON.stringify(jsonTosend[0]);
-    console.log(jsonsend)
-    request= new XMLHttpRequest()
-    request.open("POST", "newPage.php", true)
-    request.setRequestHeader("Content-type", "application/json")
-    request.send(jsonsend);
-    location.replace("/newPage.php");
+    let jsonTosend = result.filter( item => item.NewId === newId);
+    location.assign('/newPage.php?q=' + jsonTosend[0].NewId);
 }
 //Devolver json con la info, al clickar en un li enviar un post request a un archivo php pasando el json por parametro

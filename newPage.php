@@ -1,8 +1,15 @@
 <?php
-    $json = file_get_contents('php://input');
-    echo "json" .$json;
-    $data = json_decode($json, true);
-    echo 'a' .$data;
+        require_once "dbConnect.php";
+        $sql = "SELECT NewId, Title, Image, Content FROM News WHERE NewId = ?;";
+        $statement = mysqli_prepare($connection,$sql);
+        mysqli_stmt_bind_param($statement, "s", $q);
+        $q = $_REQUEST["q"];    
+        mysqli_stmt_execute($statement);
+        mysqli_stmt_store_result($statement);
+    if (mysqli_stmt_num_rows($statement) > 0) {
+        mysqli_stmt_bind_result($statement, $NewId, $Title,$Image, $Content);
+        mysqli_stmt_fetch($statement); 
+    }
 ?>
 <!DOCTYPE html>
 <head>
@@ -12,9 +19,9 @@
 <body>
     <div class="container">
         <?php
-               echo "<h2 class=\"title\">{$data["Title"]}</h2>
-               <img class=\"image\" src=\"{$data["Image"]}\">
-               <p class=\"content\">{$data["Content"]}</p>"
+               echo "<h2 class=\"title\">{$Title}</h2>
+               <img class=\"image\" src=\"{$Image}\">
+               <p class=\"content\">{$Content}</p>"
         ?>
     </div>
 </body>

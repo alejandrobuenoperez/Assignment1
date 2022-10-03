@@ -1,21 +1,22 @@
 <?php
     if(!session_id()) session_start();
-    $news = $_SESSION["data"];
-    $q = $_REQUEST["q"];
-    $countOfNews = 0;
-    for($i=0;$i<=count($news)-1;$i++){
-        if(strpos(strtoLower($news[$i]["Title"]), strtoLower($q)) !== false){
-            $result[] = $news[$i];
-            $countOfNews++;
-        }
-        if($countOfNews===5){
-            $i= count($news);
-        }
+    require_once "dbConnect.php";
+    $sqlQuery = "SELECT Title, NewId FROM News WHERE Title LIKE ? ORDER BY NewId DESC LIMIT 5;";
+    $statement = mysqli_prepare($connection,$sqlQuery);
+    $q ="%".$_REQUEST["q"]."%"; 
+    mysqli_stmt_bind_param($statement, "s", $q);
+    mysqli_stmt_execute($statement);
+    $result = mysqli_stmt_get_result($statement);
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)){
+            $data[] = $row;
+        }  
     }
-    if(count($result)>0){
+    
+    if(count($data)>0){
         header("Content-Type: application/json");
-        echo json_encode($result);
+        echo json_encode($data);
     }else{
-        echo "No result";    
+       echo "No result";    
     }
 ?>
