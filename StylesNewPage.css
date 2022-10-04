@@ -25,3 +25,8 @@ h2{
     width: 70%;
     color: white;
 }
+a:visited {
+    color: rgb(166, 239, 255);
+    background-color: transparent;
+    text-decoration: none;
+  }

@@ -23,6 +23,7 @@
                <img class=\"image\" src=\"{$Image}\">
                <p class=\"content\">{$Content}</p>"
         ?>
+        <a href="firstSample.php">Main page</a>
     </div>
 </body>
 </html>
